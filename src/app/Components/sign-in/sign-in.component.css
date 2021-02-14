@@ -1,0 +1,27 @@
+div{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    
+}
+
+form{
+    text-align: center;
+    border-style: solid;
+} 
+
+/* div{
+    margin:50px 0px; padding:0px;
+    width: 50%;
+    text-align:center;
+    align:center;
+} */
+
+mat-form-field{
+    display: block;
+    text-align: center;
+}
+
+button{
+    text-align: center;
+}

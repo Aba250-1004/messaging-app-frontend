@@ -1,0 +1,52 @@
+<div class="section">
+  
+  <form [formGroup] = "signUpForm">
+    <h2>Sign Up</h2>
+    Value: {{ signUpForm.value | json }} 
+
+    <hr>
+    <mat-form-field>
+      <input matInput placeholder="First Name" formControlName="firstName">
+
+      <mat-error *ngIf="firstName.invalid && firstName.touched">
+        <p>Required Field</p>
+      </mat-error>
+    </mat-form-field>
+    
+    <mat-form-field>
+      <input matInput placeholder="Last Name" formControlName="lastName">
+      <mat-error *ngIf="firstName.invalid && firstName.touched">
+        <p>Required Field</p>
+      </mat-error>
+    </mat-form-field>
+
+    <mat-form-field>
+      <input matInput placeholder="User Name" formControlName="userName">
+      <mat-hint>User Name must be at least 5 characters</mat-hint>
+      <mat-error *ngIf="userName.invalid && userName.touched">
+        <p>Required Field</p>
+      </mat-error>
+    </mat-form-field>
+
+    <mat-form-field>
+      <input matInput type="email" placeholder="Email" formControlName="email">
+      <mat-error *ngIf="email.invalid && email.touched">
+        <p>Required Field</p>
+      </mat-error>
+    </mat-form-field>
+
+    <mat-form-field>
+      <input matInput type="password" placeholder="Password" formControlName="password">
+
+      <mat-hint>Password must be at least 7 characters</mat-hint>
+    </mat-form-field>
+
+    <mat-form-field>
+      <input matInput type="password" placeholder="Enter Password Again" formControlName="passwordReenter">
+      <mat-hint>Must Match Password</mat-hint>
+    </mat-form-field>
+
+
+    <button matraisedbutton [disabled]="signUpForm.invalid" class="btn btn-primary" type="submit">Sign Up</button>
+  </form>
+</div>
