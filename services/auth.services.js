@@ -5,12 +5,17 @@ import { setItem, getItem, removeItem } from '../utilities/localStorage.utilitie
 const API_URL = 'http://localhost:8080/api/auth/';
 
 //function to register user
-export const register = (username, email, password) => {
-    return axios
-    .post(API_URL + 'signup', {
-        username,
+export const register = (firstName, lastName,userName, email, password, passwordReenter) => {
+    console.log("registering user")
+    return axios.post(API_URL + 'signup', {
+        firstName,
+        lastName,
+        userName,
         email,
-        password
+        password,
+        passwordReenter
+    }).then((response) => {
+        console.log(response)
     })
 }
 

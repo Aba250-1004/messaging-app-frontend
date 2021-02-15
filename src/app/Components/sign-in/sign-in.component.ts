@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { FormBuilder, FormGroup } from "@angular/forms";
+import { login } from '../../../../services/auth.services.js'
 
 @Component({
   selector: 'app-sign-in',
@@ -9,6 +10,9 @@ import { FormBuilder, FormGroup } from "@angular/forms";
 export class SignInComponent implements OnInit {
 
   signInForm: FormGroup;
+
+  loading = false
+  success = false
 
   constructor(private fb:FormBuilder) { }
 
@@ -29,4 +33,19 @@ export class SignInComponent implements OnInit {
     return this.signInForm.get("password")
   }
 
+  async submitHandler(){
+    this.loading = true
+
+    try {
+      login(this.signInForm.get("userName"),this.signInForm.get("password")).then(
+        (response) => {
+          this.success = true
+          console.log(response)    
+        },(error) => {
+                            
+        })
+      } catch (error) {
+        
+      }
+  }
 }

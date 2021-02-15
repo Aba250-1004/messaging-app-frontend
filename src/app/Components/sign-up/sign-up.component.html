@@ -1,6 +1,8 @@
+<app-nav-bar></app-nav-bar>
+
 <div class="section">
   
-  <form [formGroup] = "signUpForm">
+  <form [formGroup] = "signUpForm" (ngSubmit)="submitHandler()">
     <h2>Sign Up</h2>
     Value: {{ signUpForm.value | json }} 
 
@@ -50,3 +52,5 @@
     <button matraisedbutton [disabled]="signUpForm.invalid" class="btn btn-primary" type="submit">Sign Up</button>
   </form>
 </div>
+
+<router-outlet></router-outlet>

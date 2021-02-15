@@ -1,5 +1,7 @@
+<app-nav-bar></app-nav-bar>
+
 <div class="section">  
-    <form [formGroup] = "signInForm">
+    <form [formGroup] = "signInForm" (ngSubmit)="submitHandler()">
         <h2>Log In</h2>
         Value: {{ signInForm.value | json }} 
     
@@ -22,3 +24,5 @@
     
     </form>
 </div>  
+
+<router-outlet></router-outlet>

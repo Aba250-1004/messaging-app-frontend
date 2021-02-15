@@ -1,5 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { FormBuilder, FormGroup, Validators } from "@angular/forms"
+import { register } from '../../../../services/auth.services.js'
+import { resMessage } from '../../../../utilities/function.utilities'
 
 @Component({
   selector: 'app-sign-up',
@@ -9,6 +11,9 @@ import { FormBuilder, FormGroup, Validators } from "@angular/forms"
 export class SignUpComponent implements OnInit {
 
   signUpForm: FormGroup;
+
+  loading = false
+  success = false
 
   constructor(private fb:FormBuilder) { }
 
@@ -48,5 +53,28 @@ export class SignUpComponent implements OnInit {
 
   get passwordReenter(){
     return this.signUpForm.get("passwordReenter")
+  }
+
+  async submitHandler(){
+    this.loading = true
+
+    try {
+      register(this.signUpForm.get("firstName"), this.signUpForm.get("lastName"),
+        this.signUpForm.get("userName"), this.signUpForm.get("email"),
+        this.signUpForm.get("password"), this.signUpForm.get("passwordReenter") ).then(
+                        (response) => {
+                          this.success = true
+                          console.log(response)
+            
+                        },
+                        (error) => {
+                            
+                        }
+                    )
+      
+      
+    } catch (error) {
+      
+    }
   }
 }
