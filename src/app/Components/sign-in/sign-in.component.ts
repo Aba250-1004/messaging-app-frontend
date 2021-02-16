@@ -1,6 +1,8 @@
+import { coerceStringArray } from '@angular/cdk/coercion';
 import { Component, OnInit } from '@angular/core';
-import { FormBuilder, FormGroup } from "@angular/forms";
-import { login } from '../../../../services/auth.services.js'
+import { FormBuilder, FormGroup, Validators } from "@angular/forms"
+import { Router } from '@angular/router';
+import { login, getCurrentUser } from '../../../../services/auth.services.js'
 
 @Component({
   selector: 'app-sign-in',
@@ -14,12 +16,12 @@ export class SignInComponent implements OnInit {
   loading = false
   success = false
 
-  constructor(private fb:FormBuilder) { }
+  constructor(private fb:FormBuilder, private router: Router) { }
 
   ngOnInit(): void {
     this.signInForm = this.fb.group({
-      userName: "",
-      password: "",
+      userName: ["",[Validators.required, Validators.minLength(5)]],
+      password: ["",[Validators.required, Validators.minLength(7)]]
     })
 
     this.signInForm.valueChanges.subscribe(console.log)
@@ -37,15 +39,12 @@ export class SignInComponent implements OnInit {
     this.loading = true
 
     try {
-      login(this.signInForm.get("userName"),this.signInForm.get("password")).then(
-        (response) => {
-          this.success = true
-          console.log(response)    
-        },(error) => {
-                            
+      login(this.signInForm.get("userName").value,this.signInForm.get("password").value).then(() =>{
+          this.router.navigate(['/']);
+          console.log(getCurrentUser())
         })
       } catch (error) {
-        
+        console.log(error)
       }
   }
 }

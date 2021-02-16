@@ -1,5 +1,5 @@
 import axios from 'axios';
-import { setItem, getItem, removeItem } from '../utilities/localStorage.utilities';
+import { setItem, getItem, removeItem } from '../utilities/localStorage.utilities.js';
 
 //note: added the / at the end of this url so it doesnt need to be included before signup in axios
 const API_URL = 'http://localhost:8080/api/auth/';
@@ -7,7 +7,7 @@ const API_URL = 'http://localhost:8080/api/auth/';
 //function to register user
 export const register = (firstName, lastName,userName, email, password, passwordReenter) => {
     console.log("registering user")
-    return axios.post(API_URL + 'signup', {
+    axios.post(API_URL + 'signup', {
         firstName,
         lastName,
         userName,
@@ -16,14 +16,15 @@ export const register = (firstName, lastName,userName, email, password, password
         passwordReenter
     }).then((response) => {
         console.log(response)
+        // return response
     })
 }
 
 //function to login the user
-export const login = (username, password) => {
+export const login = (userName, password) => {
     return axios
     .post(API_URL + 'signin', {
-        username,
+        userName,
         password
     })
     .then((response) => {

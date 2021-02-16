@@ -1,7 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { FormBuilder, FormGroup, Validators } from "@angular/forms"
 import { register } from '../../../../services/auth.services.js'
-import { resMessage } from '../../../../utilities/function.utilities'
 
 @Component({
   selector: 'app-sign-up',
@@ -57,24 +56,14 @@ export class SignUpComponent implements OnInit {
 
   async submitHandler(){
     this.loading = true
+    console.log(this.signUpForm.get("firstName").value)
 
     try {
-      register(this.signUpForm.get("firstName"), this.signUpForm.get("lastName"),
-        this.signUpForm.get("userName"), this.signUpForm.get("email"),
-        this.signUpForm.get("password"), this.signUpForm.get("passwordReenter") ).then(
-                        (response) => {
-                          this.success = true
-                          console.log(response)
-            
-                        },
-                        (error) => {
-                            
-                        }
-                    )
-      
-      
+      register(this.signUpForm.get("firstName").value, this.signUpForm.get("lastName").value,
+        this.signUpForm.get("userName").value, this.signUpForm.get("email").value,
+        this.signUpForm.get("password").value, this.signUpForm.get("passwordReenter").value)
     } catch (error) {
-      
+      console.log(error)
     }
   }
 }

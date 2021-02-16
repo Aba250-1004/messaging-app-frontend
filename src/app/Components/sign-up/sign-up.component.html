@@ -4,7 +4,7 @@
   
   <form [formGroup] = "signUpForm" (ngSubmit)="submitHandler()">
     <h2>Sign Up</h2>
-    Value: {{ signUpForm.value | json }} 
+    <!-- Value: {{ signUpForm.value | json }}  -->
 
     <hr>
     <mat-form-field>
@@ -53,4 +53,5 @@
   </form>
 </div>
 
+<app-footer></app-footer>
 <router-outlet></router-outlet>

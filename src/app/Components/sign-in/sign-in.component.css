@@ -2,12 +2,17 @@ div{
     display: flex;
     align-items: center;
     justify-content: center;
-    
+
+    background-color: gainsboro;
+    height: 100%; 
 }
 
 form{
     text-align: center;
     border-style: solid;
+
+    width: 60%;
+    padding: 10px;
 } 
 
 /* div{

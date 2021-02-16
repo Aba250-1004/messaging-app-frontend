@@ -15,7 +15,10 @@ import { MatSelectModule } from '@angular/material/select'
 import { MatButtonModule } from '@angular/material/button'
 import { MatCheckboxModule } from '@angular/material/checkbox'
 import { MatChipsModule } from '@angular/material/chips';
-import { NavBarComponent } from './Components/nav-bar/nav-bar.component'
+import { NavBarComponent } from './Components/nav-bar/nav-bar.component';
+import { FooterComponent } from './Components/footer/footer.component';
+import { SettingsComponent } from './Components/settings/settings.component';
+import { NewMessageComponent } from './Components/new-message/new-message.component'
 
 
 @NgModule({
@@ -24,7 +27,10 @@ import { NavBarComponent } from './Components/nav-bar/nav-bar.component'
     HomeComponent,
     SignInComponent,
     SignUpComponent,
-    NavBarComponent
+    NavBarComponent,
+    FooterComponent,
+    SettingsComponent,
+    NewMessageComponent
   ],
   imports: [
     BrowserModule,

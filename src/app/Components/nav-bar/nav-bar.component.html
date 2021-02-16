@@ -1,4 +1,4 @@
-<nav class="navbar navbar-expand-lg navbar-light bg-light">
+<nav *ngIf="!currentUser" class="navbar navbar-expand-lg navbar-light bg-light">
     <div class="container-fluid">
       <a class="navbar-brand" routerLink="">AMC - Messenger</a>
 
@@ -9,4 +9,24 @@
     </div>
 </nav>
 
+<nav *ngIf="currentUser" class="navbar navbar-expand-lg navbar-light bg-light">
+  <div class="container">
+    <form class="d-flex">
+      <button class="btn btn-outline-success" style="margin-right: 5px;"><a [routerLink]="['/settings']"><i class="material-icons vertically-centered">settings</i></a></button>
+    </form>
+
+    <a class="navbar-brand" routerLink="">AMC - Messenger {{currentUser.userName}}</a>
+
+    <form class="d-flex">
+      <button class="btn btn-outline-success" style="margin-right: 5px;"><a [routerLink]="['/newMessage']"><i class="material-icons vertically-centered">add</i></a></button>
+    </form>
+  </div>
+</nav>
+
+
 <router-outlet></router-outlet>
+
+
+
+Value: {{ currentUser | json }}
+

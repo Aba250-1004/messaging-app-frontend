@@ -3,14 +3,14 @@
 <div class="section">  
     <form [formGroup] = "signInForm" (ngSubmit)="submitHandler()">
         <h2>Log In</h2>
-        Value: {{ signInForm.value | json }} 
+        <!-- Value: {{ signInForm.value | json }}  -->
     
         <hr>
         <mat-form-field>
             <input matInput placeholder="User Name" formControlName="userName">
             <mat-hint>User Name must be at least 5 characters</mat-hint>
             <mat-error *ngIf="userName.invalid && userName.touched">
-            Required Field
+                Required Field
             </mat-error>
         </mat-form-field>
         
@@ -20,9 +20,10 @@
             <mat-hint>Password is at least 7 characters</mat-hint>
         </mat-form-field>
 
-        <button matraisedbutton [disabled]="signInForm.invalid" class="btn btn-primary" type="submit">Sign Up</button>
+        <button matraisedbutton [disabled]="signInForm.invalid" class="btn btn-primary" type="submit">Log In</button>
     
     </form>
 </div>  
 
+<app-footer></app-footer>
 <router-outlet></router-outlet>
