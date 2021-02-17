@@ -49,12 +49,11 @@ export const logout = () => {
     removeItem('user')
 }
 
-export const deleteAccount = () => {
-    let username = getCurrentUser().username
-    // console.log("here is the username: "+username)
+export const deleteAccount = (userName) => {
+    console.log("here is the username: "+userName)
     return axios
-    .delete(API_URL + 'delete/'+username, {
-        username
+    .delete(API_URL + 'delete/'+userName, {
+        userName
     }).then((response) => {
         logout()
     }).catch( err => {
@@ -63,22 +62,22 @@ export const deleteAccount = () => {
 }
 
 export const changeEmail = (email) => {
-    let username = getCurrentUser().username
-    return axios.put(API_URL + 'editEmail/' + username , {
-        username,
+    let userName = getCurrentUser().userName
+    return axios.put(API_URL + 'editEmail/' + userName , {
+        userName,
         email
     })
 }
 
-export const changeAboutMe = (about) => {
-    let username = getCurrentUser().username
-    return axios.put(API_URL + 'aboutMe/' + username , {
-        username,
-        about
-    }).then(response => {
-        console.log(response)
-    })
-}
+// export const changeAboutMe = (about) => {
+//     let username = getCurrentUser().username
+//     return axios.put(API_URL + 'aboutMe/' + username , {
+//         username,
+//         about
+//     }).then(response => {
+//         console.log(response)
+//     })
+// }
 
 
 
@@ -94,9 +93,9 @@ export const changeAboutMe = (about) => {
 // }
 
 export const changeUsername = (newUsername) => {
-    let username = getCurrentUser().username
-    return axios.put(API_URL + 'editUsername/' + username , {
-        username,
+    let userName = getCurrentUser().userName
+    return axios.put(API_URL + 'editUsername/' + userName , {
+        userName,
         newUsername
     }).then((response) => {
         console.log(response)
@@ -107,9 +106,9 @@ export const changeUsername = (newUsername) => {
 }
 
 export const changePassword = (password, newPassword, newPasswordAgain) => {
-    let username = getCurrentUser().username
-    return axios.put(API_URL + 'editPassword/'+username , {
-        username,
+    let userName = getCurrentUser().userName
+    return axios.put(API_URL + 'editPassword/'+userName , {
+        userName,
         password,
         newPassword,
         newPasswordAgain

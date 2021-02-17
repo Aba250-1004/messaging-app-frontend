@@ -1,0 +1,38 @@
+div{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-color: gainsboro;    
+
+    padding: 30px;
+    
+}
+
+form{
+    text-align: center;
+    border-style: solid;
+    width: 60%;
+    display: block;
+
+    padding: 10px;
+} 
+
+.no-border{
+    
+    border-style: none;
+}
+/* div{
+    margin:50px 0px; padding:0px;
+    width: 50%;
+    text-align:center;
+    align:center;
+} */
+
+mat-form-field{
+    display: block;
+    text-align: center;
+}
+
+
+
+

@@ -18,7 +18,9 @@ import { MatChipsModule } from '@angular/material/chips';
 import { NavBarComponent } from './Components/nav-bar/nav-bar.component';
 import { FooterComponent } from './Components/footer/footer.component';
 import { SettingsComponent } from './Components/settings/settings.component';
-import { NewMessageComponent } from './Components/new-message/new-message.component'
+import { NewMessageComponent } from './Components/new-message/new-message.component';
+import { UserSettingsComponent } from './Components/user-settings/user-settings.component';
+import { SettingsMessageNavBarComponent } from './Components/settings-message-nav-bar/settings-message-nav-bar.component'
 
 
 @NgModule({
@@ -30,7 +32,9 @@ import { NewMessageComponent } from './Components/new-message/new-message.compon
     NavBarComponent,
     FooterComponent,
     SettingsComponent,
-    NewMessageComponent
+    NewMessageComponent,
+    UserSettingsComponent,
+    SettingsMessageNavBarComponent
   ],
   imports: [
     BrowserModule,

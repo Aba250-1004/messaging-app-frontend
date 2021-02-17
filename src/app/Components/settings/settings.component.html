@@ -1,1 +1,18 @@
-<p>settings works!</p>
+<app-settings-message-nav-bar></app-settings-message-nav-bar>
+  
+  <div class="forms">
+    <form class="settings-form" [formGroup] = "userSettings" (ngSubmit)="userSettingsClick()">
+      <!-- Value: {{ signInForm.value | json }}  -->
+
+      <button matraisedbutton class="btn btn-primary" type="submit">User Settings</button>
+    </form>
+
+
+    <form class="settings-form" [formGroup] = "logOutForm" (ngSubmit)="logOut()">
+      <!-- Value: {{ signInForm.value | json }}  -->
+
+      <button matraisedbutton class="btn btn-primary red" type="submit">Log Out</button>
+    </form>
+  </div>
+  
+  <router-outlet></router-outlet>

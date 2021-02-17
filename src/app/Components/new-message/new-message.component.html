@@ -1,1 +1,35 @@
-<p>new-message works!</p>
+<app-settings-message-nav-bar></app-settings-message-nav-bar>
+
+
+    <form [formGroup]="listOfUsers">
+
+        Value :{{ listOfUsers.value | json}}
+
+        <hr>
+        
+        <div formArrayName="users" class="new-user-forms">
+            <div class="new-user-form" *ngFor="let user of userForm.controls; let i=index" [formGroupName]="i">
+                <mat-form-field>
+                    <input matInput placeholder="User Name" formControlName="userName">
+                </mat-form-field>
+
+                <mat-form-field matraisedbutton class="btn red" (click)="deleteUser(i)">Delete</mat-form-field>
+            </div>
+        </div>
+        <div class="div-button-center">
+            <button class="add-user-button" matraisedbutton [disabled]="listOfUsers.invalid" class="btn" (click)="addUser()" >Add User</button>
+        </div>
+    </form>
+
+    <form class="message-form" [formGroup] = "newMessage" (ngSubmit)="createConversation()">
+        <!-- Value: {{ newMessage.value | json }} 
+        Value :{{ listOfUsers.value | json}} -->
+
+        <hr>
+        
+        <mat-form-field class="message-box">
+            <textarea matInput placeholder="Message" formControlName="msgBody"></textarea>
+        </mat-form-field>
+        <button class="send-button" matraisedbutton [disabled]="listOfUsers.value && newMessage.invalid" class="btn btn-primary" type="submit">Send</button>
+
+    </form>

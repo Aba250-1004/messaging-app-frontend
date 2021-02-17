@@ -1,0 +1,63 @@
+<app-settings-message-nav-bar></app-settings-message-nav-bar>
+
+<div class="form">
+  <form [formGroup] = "editUsernameForm" (ngSubmit)="editUsername()">
+    <h2>Change Username</h2>
+
+    <mat-form-field>
+      <input matInput placeholder="New Username" formControlName="newUsername">
+      
+
+      <mat-hint>Must be at least 5 characters</mat-hint>
+    </mat-form-field>
+
+
+    <button matraisedbutton [disabled]="editUsernameForm.invalid" class="btn btn-primary" type="submit">Change Username</button>
+  </form>
+</div>
+
+<div class="form">
+  <form [formGroup] = "editEmailForm" (ngSubmit)="editEmail()">
+    <h2>Change Email</h2>
+
+    <mat-form-field>
+      <input matInput type="email" placeholder="New Email" formControlName="newEmail">
+
+      <mat-hint>Enter New Email</mat-hint>
+    </mat-form-field>
+
+
+    <button matraisedbutton [disabled]="editEmailForm.invalid" class="btn btn-primary" type="submit">Change Email</button>
+  </form>
+</div>
+  
+<div class="form">
+  <form [formGroup] = "editPasswordForm" (ngSubmit)="editPassword()">
+    <h2>Change Password</h2>
+
+    <mat-form-field>
+      <input matInput type="password" placeholder="Password" formControlName="password">
+
+      <mat-hint>Enter Current Password</mat-hint>
+    </mat-form-field>
+
+    <mat-form-field>
+      <input matInput type="password" placeholder="New Password" formControlName="newPassword">
+      <mat-hint>Must be at least 7 characters</mat-hint>
+    </mat-form-field>
+
+    <mat-form-field>
+      <input matInput type="password" placeholder="Enter Password Again" formControlName="newPasswordAgain">
+      <mat-hint>Must Match Password</mat-hint>
+    </mat-form-field>
+
+    <button matraisedbutton [disabled]="editPasswordForm.invalid" class="btn btn-primary" type="submit">Change Password</button>
+  </form>
+</div>
+
+<div class="form">
+  <form class="no border" [formGroup] = "deleteAccountForm" (ngSubmit)="deleteAccount()">
+    <button matraisedbutton class="btn btn-primary-red" type="submit">Delete Account</button>
+  </form>
+</div>
+

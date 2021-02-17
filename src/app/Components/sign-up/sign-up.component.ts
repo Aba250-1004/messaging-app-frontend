@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { FormBuilder, FormGroup, Validators } from "@angular/forms"
 import { register } from '../../../../services/auth.services.js'
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-sign-up',
@@ -14,7 +15,7 @@ export class SignUpComponent implements OnInit {
   loading = false
   success = false
 
-  constructor(private fb:FormBuilder) { }
+  constructor(private fb:FormBuilder, private router:Router) { }
 
   ngOnInit(): void {
 
@@ -62,6 +63,8 @@ export class SignUpComponent implements OnInit {
       register(this.signUpForm.get("firstName").value, this.signUpForm.get("lastName").value,
         this.signUpForm.get("userName").value, this.signUpForm.get("email").value,
         this.signUpForm.get("password").value, this.signUpForm.get("passwordReenter").value)
+        this.router.navigate(['/']);
+      
     } catch (error) {
       console.log(error)
     }

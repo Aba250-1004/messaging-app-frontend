@@ -1,0 +1,9 @@
+.forms{
+    display: flex;
+    justify-content:center;
+    align-items:center;
+}
+
+.settings-form{
+    padding: 20px;
+}

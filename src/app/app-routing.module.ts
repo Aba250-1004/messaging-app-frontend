@@ -4,12 +4,14 @@ import { HomeComponent } from './Components/home/home.component';
 import { SignUpComponent } from './Components/sign-up/sign-up.component';
 import { SignInComponent } from './Components/sign-in/sign-in.component';
 import { SettingsComponent } from './Components/settings/settings.component';
-import { NewMessageComponent } from './Components/new-message/new-message.component'
+import { NewMessageComponent } from './Components/new-message/new-message.component';
+import {UserSettingsComponent} from './Components/user-settings/user-settings.component';
 
 const routes: Routes = [
   {path: "signup", component:SignUpComponent},
   {path: "login", component:SignInComponent},
   {path: "settings", component:SettingsComponent},
+  {path: "settings/user-settings", component:UserSettingsComponent},
   {path: "newMessage", component:NewMessageComponent},
   {path: "", component:HomeComponent, pathMatch: 'full'}
 ];
