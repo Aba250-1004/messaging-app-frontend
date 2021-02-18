@@ -1,31 +1,18 @@
-.page{
+#page{
     height: 100%;
     display: flex;
-    align-content: space-between;
+    flex-direction:column;
+    align-items: center;
+    background-color: gainsboro;
 }
 
-.red{
-    background-color: red;
-    width: 90px;
-}
-
-.new-user-forms{
-    align-content:flex-start;
+#to-add-user{
+    border: solid 1px black;
     display: flex;
-    flex-wrap:wrap;
+    flex-direction: column;
+    width: 30%;
+    padding: 2px;
 }
-
-.new-user-form{
-    border-style: solid;
-    padding: 10px;
-    margin: 10px;
-    display: flex;
-}
-
-.div-button-center{
-    text-align: center;
-}
-
 .message-form{ 
     position: fixed; 
     bottom: 0;
@@ -39,6 +26,7 @@
 
 .message-box{
     width: 100%;
+    background-color: white;
 } 
 
 

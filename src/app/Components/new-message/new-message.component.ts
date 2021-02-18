@@ -1,6 +1,8 @@
 import { Component, OnInit } from '@angular/core';
 import { FormBuilder, FormGroup, Validators, FormArray } from "@angular/forms"
-import {  } from '../../../../services/auth.services.js'
+import { checkIfUserNameExists } from '../../../../services/auth.services.js'
+import { makeConversationAndMessage } from '../../../../services/message.services.js'
+
 import { Router } from '@angular/router';
 
 @Component({
@@ -10,25 +12,31 @@ import { Router } from '@angular/router';
 })
 export class NewMessageComponent implements OnInit {
 
-  listOfUsers: FormGroup;
+  errorMessage = ""
+  allUsers = []
+  currentUser: FormGroup;
   newMessage: FormGroup;
 
   constructor(private fb:FormBuilder, private router: Router) {
       
-
-      this.listOfUsers = this.fb.group({
-        users: this.fb.array([])
+      this.currentUser = this.fb.group({
+        user: ""
       })
 
       this.newMessage = this.fb.group({
         msgBody: ""
       })
+
+      this.newMessage.valueChanges.subscribe(console.log)
    }
 
   ngOnInit(): void {
   }
 
   createConversation(){
+    makeConversationAndMessage(this.allUsers, this.msgBody)
+    this.router.navigate(['/']);
+
 
   }
 
@@ -36,22 +44,21 @@ export class NewMessageComponent implements OnInit {
     return this.newMessage.get("msgBody")
   }
 
-
-
-  get userForm(){
-    return this.listOfUsers.get("users") as FormArray
+  get user(){
+    return this.currentUser.get("user")
   }
 
-  addUser(){
-    const user = this.fb.group({
-      userName: [""]
-    })
+  async addUser(){
+    console.log(this.user.value)
+    let userExist = await checkIfUserNameExists(this.user.value)
+    console.log(userExist)
+    if (userExist.data.userExists){
+      this.allUsers.push(this.user.value)
+      this.errorMessage = ""
+    }else{
+      this.errorMessage = "Error Message: " + this.user.value + "does not exist"
+    }
     
-
-    this.userForm.push(user)
-  }
-
-  deleteUser(i){
-    this.userForm.removeAt(i)
+    this.currentUser.setValue({user:""})
   }
 }

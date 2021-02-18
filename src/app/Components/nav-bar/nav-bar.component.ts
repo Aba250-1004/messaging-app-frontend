@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { getCurrentUser } from '../../../../services/auth.services.js'
 
+
 @Component({
   selector: 'app-nav-bar',
   templateUrl: './nav-bar.component.html',
@@ -9,11 +10,13 @@ import { getCurrentUser } from '../../../../services/auth.services.js'
 export class NavBarComponent implements OnInit {
 
   currentUser = {}
+
   
   constructor() { }
 
   ngOnInit(): void {
     this.currentUser = getCurrentUser()
+    
   }
 
 }
