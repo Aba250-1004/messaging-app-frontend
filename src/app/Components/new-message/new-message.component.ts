@@ -26,16 +26,18 @@ export class NewMessageComponent implements OnInit {
       this.newMessage = this.fb.group({
         msgBody: ""
       })
-
-      this.newMessage.valueChanges.subscribe(console.log)
    }
 
   ngOnInit(): void {
   }
 
   createConversation(){
-    makeConversationAndMessage(this.allUsers, this.msgBody)
+    console.log(this.allUsers)
+    console.log(this.msgBody.value)
+    makeConversationAndMessage(this.allUsers, this.msgBody.value)
     this.router.navigate(['/']);
+    
+    
 
 
   }

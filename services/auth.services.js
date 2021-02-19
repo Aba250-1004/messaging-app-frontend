@@ -116,7 +116,7 @@ export const changePassword = (password, newPassword, newPasswordAgain) => {
 }
 
 export const checkIfUserNameExists = (userName) => {
-    console.log("middle ware user name:" + userName)
+    // console.log("middle ware user name:" + userName)
     return axios.get(API_URL+'userNameExists/'+userName, {
         userName:userName
     })

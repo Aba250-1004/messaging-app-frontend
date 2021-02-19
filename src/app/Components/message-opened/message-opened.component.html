@@ -1,0 +1,31 @@
+<app-settings-message-nav-bar></app-settings-message-nav-bar>
+
+<div class="panel">
+    <div class="messages-container">
+        <div class="message-container" *ngFor="let createdAt of createdAts; let i=index;">
+            <div class="message-not-current" *ngIf="!isMessageFromCurrentUser[i]">
+                <div class="message-header">
+                    <p>{{messageFromUsers[i]}}</p>
+                    <p>{{createdAts[i]}}</p>
+                </div>
+                <p>{{userMessages[i]}}</p>
+                
+            </div> 
+            <div class="message-current" *ngIf="isMessageFromCurrentUser[i]">
+                <div class="message-header-current">
+                    <p>{{createdAts[i]}}</p>
+                </div>
+                <p class="msgBody-current">{{userMessages[i]}}</p>
+            </div> 
+        </div>
+    </div>
+    <form class="message-form" [formGroup] = "newMessage" (ngSubmit)="sendMessage()">
+        <hr>
+        
+        <mat-form-field class="message-box">
+            <textarea matInput placeholder="Message" formControlName="msgBody"></textarea>
+        </mat-form-field>
+        <button class="send-button" matraisedbutton class="btn btn-primary" type="submit">Send</button>
+
+    </form>
+</div>

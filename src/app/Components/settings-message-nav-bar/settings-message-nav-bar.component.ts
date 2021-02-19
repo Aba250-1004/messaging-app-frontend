@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { removeCurrentConversation } from '../../../../services/message.services.js'
 
 @Component({
   selector: 'app-settings-message-nav-bar',
@@ -12,4 +13,7 @@ export class SettingsMessageNavBarComponent implements OnInit {
   ngOnInit(): void {
   }
 
+  onClick(){
+    removeCurrentConversation()
+  }
 }

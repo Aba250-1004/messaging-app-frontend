@@ -1,6 +1,6 @@
 <app-nav-bar></app-nav-bar>
 
-<div *ngIf="!currentUser">
+<div class="panel" *ngIf="!currentUser">
     <h1>Welcome to AMC - Messenger!</h1>
 
     <h2>Join The Movement - Connect with your Friends!</h2>
@@ -8,9 +8,17 @@
 
 
 
-<div *ngIf="currentUser">
-    <div *ngFor=""></div>
-    got messages 
+<div class="panel" *ngIf="currentUser">
+    <div class="message" *ngFor="let id of ids; let i=index;" (click)="handleDivClick(id)">
+        <div class="message-header">
+            <p>{{usersInMessage[i]}}</p>
+            <p>{{createdAts[i]}}</p>
+        </div>
+        <div class="message-body">
+            {{userMessages[i]}} 
+        </div>    
+    </div>
+   
 </div>
 
 <!-- <app-footer></app-footer> -->

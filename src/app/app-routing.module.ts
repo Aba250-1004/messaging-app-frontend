@@ -6,6 +6,7 @@ import { SignInComponent } from './Components/sign-in/sign-in.component';
 import { SettingsComponent } from './Components/settings/settings.component';
 import { NewMessageComponent } from './Components/new-message/new-message.component';
 import {UserSettingsComponent} from './Components/user-settings/user-settings.component';
+import {MessageOpenedComponent} from './Components/message-opened/message-opened.component'
 
 const routes: Routes = [
   {path: "signup", component:SignUpComponent},
@@ -13,6 +14,7 @@ const routes: Routes = [
   {path: "settings", component:SettingsComponent},
   {path: "settings/user-settings", component:UserSettingsComponent},
   {path: "newMessage", component:NewMessageComponent},
+  {path: "messageOpened", component:MessageOpenedComponent},
   {path: "", component:HomeComponent, pathMatch: 'full'}
 ];
 

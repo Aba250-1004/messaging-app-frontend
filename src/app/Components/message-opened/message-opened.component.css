@@ -1,0 +1,46 @@
+.message-current{
+    background-color: lightblue;
+}
+
+.message-not-current{
+    background-color: WhiteSmoke;
+}
+
+.message-header-current{
+    display: flex;
+    justify-content: flex-end;
+}
+ 
+.panel{
+    height: 100%;
+    background-color: gainsboro;
+}
+.messages-container{
+    height: 80%;
+    overflow-y: auto;
+    border-style: solid;
+}
+.message-header{
+    display: flex;
+    flex-direction: row;
+    justify-content:space-between;
+}
+ .message-form{ 
+    width: 100%;
+    display: flex;
+}
+.msgBody-current{
+    display: flex;
+    justify-content: flex-end;
+}
+
+.send-button{
+    flex-direction: column;
+    align-self: center;
+}
+
+.message-box{
+    width: 100%;
+    height: 20%;
+    background-color: white;
+} 
