@@ -38,6 +38,7 @@ export class NewMessageComponent implements OnInit {
     this.router.navigate(['/']);
     
     
+    
 
 
   }

@@ -72,18 +72,22 @@ export class HomeComponent implements OnInit {
           //   this.createdAts.push((this.messages["messages"][i].createdAt.substring(0, this.messages["messages"][i].createdAt.indexOf('.'))))
 
           // }
-          for (let value of this.messages["messages"]){
+          // for (let value of this.messages["messages"]){
             
-            this.userMessages.push(value.msgBody)
-            this.createdAts.push((value.createdAt.substring(0, value.createdAt.indexOf('.'))))
+          //   this.userMessages.push(value.msgBody)
+            
 
+          // }
+
+          for(let i = this.messages["messages"].length - 1; i >= 0 ; i--){
+            this.userMessages.push(this.messages["messages"][i].msgBody)
           }
+
           console.log(this.messages["conversationIds"])
           for (let i = 0; i < this.messages["conversationIds"].length; i++){
             this.ids.push(this.messages["conversationIds"][i])
+            this.createdAts.push((this.messages["lastMessageTime"][i].substring(0, this.messages["lastMessageTime"][i].indexOf('.'))))
           }
-
-          
         } 
     } );
   }
