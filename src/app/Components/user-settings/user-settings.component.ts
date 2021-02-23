@@ -41,7 +41,7 @@ export class UserSettingsComponent implements OnInit {
       newPasswordAgain: ["",[Validators.required, Validators.minLength(7)]]
     })
 
-    this.editUsernameForm.valueChanges.subscribe(console.log)
+    // this.editUsernameForm.valueChanges.subscribe(console.log)
   }
 
   async editPassword(){
@@ -49,18 +49,18 @@ export class UserSettingsComponent implements OnInit {
       changePassword(this.editPasswordForm.get("password").value,this.editPasswordForm.get("newPassword").value, this.editPasswordForm.get("newPasswordAgain").value)
       this.router.navigate(['/']);
       } catch (error) {
-        console.log(error)
+        // console.log(error)
       }
   }
 
   async editUsername(){
-    console.log(this.editEmailForm.get("newUserName").value)
-    console.log(getCurrentUser().userName)
+    // console.log(this.editEmailForm.get("newUserName").value)
+    // console.log(getCurrentUser().userName)
     try {
       changeUsername(getCurrentUser().userName,this.editEmailForm.get("newUserName").value)
       this.router.navigate(['/']);
       } catch (error) {
-        console.log(error)
+        // console.log(error)
       }
   }
 
@@ -69,7 +69,7 @@ export class UserSettingsComponent implements OnInit {
       changeEmail(getCurrentUser().email,this.editEmailForm.get("newEmail").value)
       this.router.navigate(['/']);
       } catch (error) {
-        console.log(error)
+        // console.log(error)
       }
   }
 
@@ -79,7 +79,7 @@ export class UserSettingsComponent implements OnInit {
       logout()
       this.router.navigate(['/']);
       } catch (error) {
-        console.log(error)
+        // console.log(error)
       }
   }
 

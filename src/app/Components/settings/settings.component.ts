@@ -35,7 +35,7 @@ export class SettingsComponent implements OnInit {
       logout()
       this.router.navigate(['/']);
       } catch (error) {
-        console.log(error)
+        // console.log(error)
       }
   }
 
@@ -45,7 +45,7 @@ export class SettingsComponent implements OnInit {
     try {
       this.router.navigate(['/settings/user-settings']);
       } catch (error) {
-        console.log(error)
+        // console.log(error)
       }
   }
 

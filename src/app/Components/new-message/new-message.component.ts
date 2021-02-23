@@ -32,14 +32,10 @@ export class NewMessageComponent implements OnInit {
   }
 
   createConversation(){
-    console.log(this.allUsers)
-    console.log(this.msgBody.value)
+    // console.log(this.allUsers)
+    // console.log(this.msgBody.value)
     makeConversationAndMessage(this.allUsers, this.msgBody.value)
     this.router.navigate(['/']);
-    
-    
-    
-
 
   }
 
@@ -52,9 +48,9 @@ export class NewMessageComponent implements OnInit {
   }
 
   async addUser(){
-    console.log(this.user.value)
+    // console.log(this.user.value)
     let userExist = await checkIfUserNameExists(this.user.value)
-    console.log(userExist)
+    // console.log(userExist)
     if (userExist.data.userExists){
       this.allUsers.push(this.user.value)
       this.errorMessage = ""

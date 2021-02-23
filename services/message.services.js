@@ -3,7 +3,7 @@ import {getCurrentUser } from './auth.services.js'
 import { getItem, removeItem } from '../utilities/localStorage.utilities.js';
 
 //note: added the / at the end of this url so it doesnt need to be included before signup in axios
-const API_URL = 'http://localhost:8080/api/';
+const API_URL = process.env.REACT_APP_BACKEND_URL+'api/';
 
 
 

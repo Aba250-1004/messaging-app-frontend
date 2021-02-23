@@ -37,7 +37,7 @@ export class MessageOpenedComponent implements OnInit {
       viewCurrentConversation()
       .then( ( response ) => {
           observer.next( response.data );
-          console.log(response)
+          // console.log(response)
           this.messages = response.data
 
           observer.complete();
@@ -47,32 +47,32 @@ export class MessageOpenedComponent implements OnInit {
       } );
   } );
     let subscription = observable$.subscribe( {
-        next: data => console.log( '[data] => ', data ),
+        next: data => console.log(),
         complete: data => {
           for(let i = this.messages["messages"].length - 1; i >= 0;i--){
             this.userMessages.push(this.messages["messages"][i].msgBody)
             this.createdAts.push((this.messages["messages"][i].createdAt.substring(0, this.messages["messages"][i].createdAt.indexOf('.'))))
             
-            console.log("begining of loop")
-            console.log(this.messages["messages"][i])
+            // console.log("begining of loop")
+            // console.log(this.messages["messages"][i])
             for (let user of this.messages["userNames"]){
-              console.log("--------")
-              console.log(user)
+              // console.log("--------")
+              // console.log(user)
               if (user.id == this.messages["messages"][i].fromUserId){
                 this.messageFromUsers.push(user.userName)
               }
             }
-            console.log(this.messageFromUsers)
+            // console.log(this.messageFromUsers)
             this.isMessageFromCurrentUser = []
             for (let userName of this.messageFromUsers){
-              console.log(userName+" vs "+ getCurrentUser().userName)
+              // console.log(userName+" vs "+ getCurrentUser().userName)
               if (userName != getCurrentUser().userName){
                 this.isMessageFromCurrentUser.push(false)
               }else{
                 this.isMessageFromCurrentUser.push(true)
               }
             }
-            console.log(this.isMessageFromCurrentUser)
+            // console.log(this.isMessageFromCurrentUser)
           }
           
         } 
@@ -84,7 +84,7 @@ export class MessageOpenedComponent implements OnInit {
   }
 
   sendMessage(){
-    console.log(this.msgBody.value)
+    // console.log(this.msgBody.value)
     let allUsers = []
     for(let user of this.messages["userNames"]){
       if (user.id != getCurrentUser().id){

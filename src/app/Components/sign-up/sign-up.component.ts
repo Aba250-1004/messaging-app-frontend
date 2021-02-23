@@ -28,7 +28,7 @@ export class SignUpComponent implements OnInit {
       passwordReenter:["",[Validators.required, Validators.minLength(7)]]
     })
 
-    this.signUpForm.valueChanges.subscribe(console.log)
+    // this.signUpForm.valueChanges.subscribe(console.log)
   }
 
   get firstName() {
@@ -57,7 +57,7 @@ export class SignUpComponent implements OnInit {
 
   async submitHandler(){
     this.loading = true
-    console.log(this.signUpForm.get("firstName").value)
+    // console.log(this.signUpForm.get("firstName").value)
 
     try {
       register(this.signUpForm.get("firstName").value, this.signUpForm.get("lastName").value,
@@ -66,7 +66,7 @@ export class SignUpComponent implements OnInit {
         this.router.navigate(['/']);
       
     } catch (error) {
-      console.log(error)
+      // console.log(error)
     }
   }
 }

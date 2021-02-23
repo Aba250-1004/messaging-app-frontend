@@ -23,7 +23,7 @@ export class SignInComponent implements OnInit {
       password: ["",[Validators.required, Validators.minLength(7)]]
     })
 
-    this.signInForm.valueChanges.subscribe(console.log)
+    // this.signInForm.valueChanges.subscribe(console.log)
   }
 
   get userName(){
@@ -40,10 +40,10 @@ export class SignInComponent implements OnInit {
     try {
       login(this.signInForm.get("userName").value,this.signInForm.get("password").value).then(() =>{
           this.router.navigate(['/']);
-          console.log(getCurrentUser())
+          // console.log(getCurrentUser())
         })
       } catch (error) {
-        console.log(error)
+        // console.log(error)
       }
   }
 }

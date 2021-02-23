@@ -45,9 +45,9 @@ export class HomeComponent implements OnInit {
       } );
   } );
     let subscription = observable$.subscribe( {
-        next: data => console.log( '[data] => ', data ),
+        next: data => console.log(),
         complete: data => {
-          console.log(this.messages)
+          // console.log(this.messages)
           this.currentUser = getCurrentUser()
           for (let value of this.messages["usernames"]){
             var index = value.indexOf(getCurrentUser().userName);
@@ -83,7 +83,7 @@ export class HomeComponent implements OnInit {
             this.userMessages.push(this.messages["messages"][i].msgBody)
           }
 
-          console.log(this.messages["conversationIds"])
+          // console.log(this.messages["conversationIds"])
           for (let i = 0; i < this.messages["conversationIds"].length; i++){
             this.ids.push(this.messages["conversationIds"][i])
             this.createdAts.push((this.messages["lastMessageTime"][i].substring(0, this.messages["lastMessageTime"][i].indexOf('.'))))
@@ -94,7 +94,7 @@ export class HomeComponent implements OnInit {
 
   handleDivClick(id){
     // console.log([...userNames, getCurrentUser().userName])
-    console.log(id)
+    // console.log(id)
   
       //call our setItem funciton and pass in 'user' and response.data
     setItem('conversationId', id);
