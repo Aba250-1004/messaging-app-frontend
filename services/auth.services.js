@@ -2,7 +2,7 @@ import axios from 'axios';
 import { setItem, getItem, removeItem } from '../utilities/localStorage.utilities.js';
 
 //note: added the / at the end of this url so it doesnt need to be included before signup in axios
-const API_URL = process.env.REACT_APP_BACKEND_URL+'api/auth/';
+const API_URL = process.env.ANGULAR_APP_BACKEND_URL+'api/auth/';
 
 //function to register user
 export const register = (firstName, lastName,userName, email, password, passwordReenter) => {
