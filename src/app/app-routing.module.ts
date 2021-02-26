@@ -7,7 +7,6 @@ import { SettingsComponent } from './Components/settings/settings.component';
 import { NewMessageComponent } from './Components/new-message/new-message.component';
 import {UserSettingsComponent} from './Components/user-settings/user-settings.component';
 import {MessageOpenedComponent} from './Components/message-opened/message-opened.component';
-import {NotFoundComponent} from './Components/not-found/not-found.component'
 
 const routes: Routes = [
   {path: "signup", component:SignUpComponent},

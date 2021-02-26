@@ -22,7 +22,7 @@ import { NewMessageComponent } from './Components/new-message/new-message.compon
 import { UserSettingsComponent } from './Components/user-settings/user-settings.component';
 import { SettingsMessageNavBarComponent } from './Components/settings-message-nav-bar/settings-message-nav-bar.component';
 import { MessageOpenedComponent } from './Components/message-opened/message-opened.component';
-import { NotFoundComponent } from './Components/not-found/not-found.component'
+import { MessageOpenedNavBarComponent } from './Components/message-opened-nav-bar/message-opened-nav-bar.component'
 
 
 @NgModule({
@@ -38,7 +38,7 @@ import { NotFoundComponent } from './Components/not-found/not-found.component'
     UserSettingsComponent,
     SettingsMessageNavBarComponent,
     MessageOpenedComponent,
-    NotFoundComponent
+    MessageOpenedNavBarComponent
   ],
   imports: [
     BrowserModule,

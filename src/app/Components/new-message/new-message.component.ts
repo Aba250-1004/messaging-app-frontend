@@ -55,7 +55,7 @@ export class NewMessageComponent implements OnInit {
       this.allUsers.push(this.user.value)
       this.errorMessage = ""
     }else{
-      this.errorMessage = "Error Message: " + this.user.value + "does not exist"
+      this.errorMessage = "Error Message: " + this.user.value + " does not exist"
     }
     
     this.currentUser.setValue({user:""})
