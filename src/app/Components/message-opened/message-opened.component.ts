@@ -93,8 +93,7 @@ export class MessageOpenedComponent implements OnInit {
     } 
     sendMessageToExistingGroup(allUsers, this.msgBody.value).then(()=> {
       this.newMessage.setValue({msgBody:""})
-      this.router.navigate(['/messageOpened']);
-      location.reload();
+      this.router.navigate(['/']);
     })
     
   }
