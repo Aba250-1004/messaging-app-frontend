@@ -16,9 +16,7 @@ const routes: Routes = [
   {path: "settings/user-settings", component:UserSettingsComponent},
   {path: "newMessage", component:NewMessageComponent},
   {path: "messageOpened", component:MessageOpenedComponent},
-  {path: "", component:HomeComponent},
-  {path: "**", component: NotFoundComponent},
-  {path: "newMessage?", component: NotFoundComponent}
+  {path: "", component:HomeComponent}
 ];
 
 @NgModule({
