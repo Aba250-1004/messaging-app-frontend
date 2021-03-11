@@ -1,7 +1,8 @@
 # MessagingAppFrontend
 
-This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 11.1.2.
-[Backend Repo](https://github.com/Aba250-1004/messaging-app-backend)
+* This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 11.1.2.
+* [Backend Repo](https://github.com/Aba250-1004/messaging-app-backend)
+* amc-messenger.surge.sh
 
 ## Development server
 
