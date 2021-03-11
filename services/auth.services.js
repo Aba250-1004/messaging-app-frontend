@@ -3,6 +3,7 @@ import { setItem, getItem, removeItem } from '../utilities/localStorage.utilitie
 
 //note: added the / at the end of this url so it doesnt need to be included before signup in axios
 const API_URL = 'https://amc-messenger-backend.herokuapp.com/api/auth/';
+// const API_URL = 'http://localhost:8080/api/auth/';
 
 //function to register user
 export const register = (firstName, lastName,userName, email, password, passwordReenter) => {
@@ -22,6 +23,7 @@ export const register = (firstName, lastName,userName, email, password, password
 
 //function to login the user
 export const login = (userName, password) => {
+    console.log("logging in")
     return axios
     .post(API_URL + 'signin', {
         userName,

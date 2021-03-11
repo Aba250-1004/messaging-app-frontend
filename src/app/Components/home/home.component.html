@@ -9,7 +9,7 @@
 
 
 <div class="panel" *ngIf="currentUser">
-    <div class="message" *ngFor="let id of ids; let i=index;" (click)="handleDivClick(id)">
+    <div class="message" *ngFor="let id of ids; let i=index;"  (click)="handleDivClick(id)">
         <div class="message-header">
             <p>{{usersInMessage[i]}}</p>
             <p>{{createdAts[i]}}</p>
