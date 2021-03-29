@@ -23,6 +23,12 @@
         <button matraisedbutton [disabled]="signInForm.invalid" class="btn btn-primary" type="submit">Log In</button>
     
     </form>
+
+    <div class="alert" *ngIf="isShow">
+        <div style="padding: 0; color: #D8000C; background-color: #FFD2D2;">
+          {{message}}
+        </div>
+    </div>
 </div>  
 
 <app-footer></app-footer>

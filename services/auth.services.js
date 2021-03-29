@@ -8,29 +8,25 @@ const API_URL = 'https://amc-messenger-backend.herokuapp.com/api/auth/';
 //function to register user
 export const register = (firstName, lastName,userName, email, password, passwordReenter) => {
     console.log("registering user")
-    axios.post(API_URL + 'signup', {
+    return axios.post(API_URL + 'signup', {
         firstName,
         lastName,
         userName,
         email,
         password,
         passwordReenter
-    }).then((response) => {
-        console.log(response)
-        // return response
     })
 }
 
 //function to login the user
 export const login = (userName, password) => {
     console.log("logging in")
-    return axios
-    .post(API_URL + 'signin', {
+    return axios.post(API_URL + 'signin', {
         userName,
         password
     })
     .then((response) => {
-        console.log(response)
+        // console.log(response)
         //if user has accessToken, set it to local storage 
         if(response.data.accessToken){
             //call our setItem funciton and pass in 'user' and response.data

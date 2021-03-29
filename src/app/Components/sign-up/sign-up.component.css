@@ -2,10 +2,17 @@ div{
     display: flex;
     align-items: center;
     justify-content: center;
-    background-color: gainsboro;    
+    background-color: gainsboro;   
+    flex-direction: column; 
 
     padding: 30px;
     height: 100%; 
+}
+
+#success{
+    padding: 0;
+    color: #4F8A10;
+    background-color: #DFF2BF;
 }
 
 form{

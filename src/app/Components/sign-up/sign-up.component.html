@@ -51,6 +51,15 @@
 
     <button matraisedbutton [disabled]="signUpForm.invalid" class="btn btn-primary" type="submit">Sign Up</button>
   </form>
+
+  <div class="alert" *ngIf="isShow">
+    <div class="success" *ngIf="success" style="padding: 0; color: #4F8A10; background-color: #DFF2BF;">
+      {{message}}
+    </div>
+    <div *ngIf="!success" style="padding: 0; color: #D8000C; background-color: #FFD2D2;">
+      {{message}}
+    </div>
+  </div>
 </div>
 
 <app-footer></app-footer>
